@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" href="wetter.css">
+    <script src="wetter1.js"></script>
+    <title>Wetter@orgaMAX.de</title>
+    
+</head>
+    
+<body>
+    
+    <div class="container">
+        <div class="background"></div>
+        <a class="home" href="Seite / Anweseheitstool"><!-- Hier die Website zum Anweseheits Webseite -->
+            <img src="images/home3.ico" alt="Home" style="width: 25px; height: 25px;">
+        </a>
+        <div class="search-box">
+            <div class="location-container">
+            <i class="fa-solid fa-location-dot">
+                <img src="images/loaction2.ico" alt="Location" class="location-icon" style="width: 50px; height: 50px;">
+            </i>
+            </div>
+            <input type="text" placeholder="Dein Standort" class="custom-input">
+            <button class="fa-solid fa-magnifying-glass">
+                <img src="images/search.ico" alt="Search" style="width: 25px; height: 25px;">
+            </button>
+        </div>
+        
+        <div class="weather-box">
+            <p class="status">Aktuell: </p>
+            <span class="current-time"></span>
+            <i class="fas fa-sun"></i> <!-- Hier das Icon für sonniges Wetter -->
+            <img src="" alt="Sunny" class="weather-icon" style="width: 45px; height: 45px;">
+            
+            <p class="temperature"></p>
+            <p class="description"></p>
+        </div>
+       
+        <div class="not-found">
+            <img src="images/404.png">
+            <p>Falsche location :/</p>
+        </div>
+
+        <div class="weather-box">
+            <img src="">
+            <p class="temperature"></p>
+            <p class="description"></p>
+            
+        </div>
+
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-water"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Luftfeuchtigkeit</p>
+                </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span></span>
+                    <p>Wind Geschwindigkeit</p>
+                </div>
+            </div>
+        </div>
+        <p id="today">Heute</p>
+        <div class="hourly-forecast">
+            
+          </div>
+          <p id="week">Wochenvorhersage</p>
+          <p class="line"></p>
+        <div class="weekly-forecast"></div>
+        
+    </div>
+    <script src="wetter.js"></script>
+</body>
+
+</html>

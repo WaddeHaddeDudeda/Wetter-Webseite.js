@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/wetter_bg.jpg');
+    background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Hintergrund bedeckt */
+    background-position: center; /* Das Bild wird zentriert */
+    background-repeat: no-repeat;
+}
+.container {
+    position: relative;
+    width: 400px;
+    height: 145px;
+    padding: 28px 32px;
+    overflow: hidden;
+    border-radius: 18px;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6s ease-out;
+}
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, hwb(120 86% 12%), #dad8d7);
+    filter: blur(100px);
+    z-index: -1; /* Damit das Hintergrundelement hinter dem Inhalt liegt */
+}
+.home{
+    margin-left: 50%;
+}
+.location-container {
+    margin-right: 55px; /* Füge rechts Abstand hinzu */
+    margin-bottom: 55px;
+}
+.search-box{
+    width: 100%;
+    height: min-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search-box input{
+    color: #06283D;
+    width: 80%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-left: 32px;
+}
+.search-box input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+    color: #06283D;
+    text-transform: capitalize;
+}
+.search-box button{
+    cursor: pointer;
+    width: 60px;
+    height: 50px;
+    color: #06283D;
+    background: #dff6ff;
+    border-radius: 30%;
+    font-size: 22px;
+    transition: 0.4s ease;
+    margin-left: 10px;
+}
+.search-box button:hover{
+    color: #fff;
+    background: #06283D;
+}
+.search-box i{
+    position: absolute;
+    color: #06283D;
+    font-size: 28px;
+}
+.custom-input {
+    background-color: rgb(236, 235, 235);
+    border: none;
+    border-radius: 10px; /* Runde die Ecken des Eingabefelds ab */
+    padding: 10px; /* Füge Innenabstand hinzu */
+    
+}
+.current-time {
+    font-size: 1.5em; /* Passe die Größe an, falls gewünscht */
+    color: #06283D; /* Verwende die gleiche Farbe wie für den Wetterstatus */
+    margin-left: 10px; /* Füge etwas Abstand zum Wetterstatus hinzu */
+}
+.status{
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+.weather-box{
+    text-align: center;
+    color: #06283D;
+}
+.weather-box img{
+    width: 60%;
+    margin-top: 30px; 
+}
+.weather-box .temperature{
+    position: relative;
+    color: #06283D;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: -16px;
+}
+.weather-box .temperature span{
+    position: absolute;
+    margin-left: 4px;
+    font-size: 1.5rem;
+}
+.weather-box .description{
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.weather-details .humidity, .weather-details .wind{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+.weather-details .humidity{
+    padding-left: 20px;
+    justify-content: flex-start;
+}
+.weather-details .wind{
+    padding-right: 20px;
+    justify-content: flex-end;
+}
+.weather-details i{
+    color: #06283D;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+.weather-details span{
+    color: #06283D;
+    font-size: 22px;
+    font-weight: 500;
+}
+.weather-details p{
+    color: #06283D;
+    font-size: 14px;
+    font-weight: 500;
+}
+.not-found{
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    scale: 0;
+    opacity: 0;
+    display: none;
+}
+.not-found img{
+    width: 70%;
+}
+.not-found p{
+    color: #dff6ff;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+.weather-box, .weather-details{
+    scale: 0;
+    opacity: 0;
+}
+.fadeIn{
+    animation: 0.5s fadeIn forwards;
+    animation-delay: 0.5s;
+}
+#today{
+    margin-top: 15px;
+    margin-left: 5%;
+    font-size: 20px;
+    position: relative;
+    color: rgb(0, 0, 0);
+}
+#today::after {
+    content: ''; /* Fügt den Strich hinzu */
+    position: absolute; /* Positioniert das Pseudoelement absolut */
+    bottom: -5px; /* Platziert den Strich knapp unterhalb des Texts */
+    left: 0; /* Beginnt den Strich ganz links */
+    width: 95%; /* Setzt die Breite auf 100% des übergeordneten Elements */
+    height: 1px; 
+    background-color: rgb(0, 0, 0); 
+}
+.hourly-forecast {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.hour {
+    text-align: center;
+} 
+.hour span {
+    display: block;
+    margin-bottom: 5px;
+}
+.hour img {
+    width: 50px;
+    height: 50px;
+}
+#week{
+    margin-top: 15px;
+    font-size: 20px; 
+    position: relative;
+}
+#week::after {
+    content: ''; /* Fügt den Strich hinzu */
+    position: absolute; /* Positioniert das Pseudoelement absolut */
+    bottom: -5px; /* Platziert den Strich knapp unterhalb des Texts */
+    left: 0; /* Beginnt den Strich ganz links */
+    width: 95%; /* Setzt die Breite auf 95% des übergeordneten Elements */
+    height: 1px; /* Höhe der Linie */
+    background-color: rgb(0, 0, 0); /* Farbe der Linie */
+  }
+.weekly-forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.weekly-forecast .day {
+    text-align: center;
+}
+.weekly-forecast .day img {
+    width: 50px;
+    height: 50px;
+}
+@keyframes fadeIn{
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}
